@@ -4,7 +4,6 @@ import { Invitation } from "./invitation";
 import { PDF } from "./pdf";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button, FormControl, FormHelperText, FormLabel, Input } from "@mui/material";
-import { log } from "console";
 
 export default function Page() {
   const [state, setState] = useState({
@@ -31,19 +30,11 @@ export default function Page() {
   return (
     <>
       <div className="fixed left-0 top-0 w-full h-full flex">
-        <div className={'relative b5 bg-[url(/cover.png)] bg-contain flex m-auto'}>
-          <div className="h-[20cm] w-full flex flex-col justify-between">
-            <div className="h-full w-full flex justify-center items-end">
-            </div>
-            <div className="h-60">
-
-            </div>
-            <div className="h-full flex flex-col justify-center gap-10">
+        <div className={'w-full max-w-3xl h-full relative bg-[url(/cover-2.png)] bg-cover bg-center flex m-auto'}>
+          <div className="h-[inherit] w-full flex flex-col justify-between">
+            <div className="h-full flex flex-col justify-center gap-10 mt-40">
               <div className="text-center leading-10 text-[100%]">
                 <button className={'rounded-xl px-3 py-1 border'} onClick={() => setDialogFormOpen(true)}>Criar convite</button>
-              </div>
-              <div className="text-center text-2xl font-serif">
-                06 de Dezembro de 2024
               </div>
             </div>
           </div>
