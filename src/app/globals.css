@@ -3,13 +3,12 @@
 @tailwind utilities;
 
 .b5 {
-    width: 100%;
+    min-width: 176mm;
+    min-height: 250mm;
     max-width: 176mm;
     max-height: 250mm;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    aspect-ratio: 176 / 250;
-    overflow: hidden;
 }
 
 .dashed-border {

@@ -1,6 +1,5 @@
 'use client';
 import { FormEvent, use, useRef, useState } from "react";
-import { Invitation } from "./invitation";
 import { PDF } from "./pdf";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button, FormControl, FormHelperText, FormLabel, Input } from "@mui/material";
@@ -67,12 +66,11 @@ export default function Page() {
         </form>
       </Dialog >
 
-      <Dialog fullWidth maxWidth={'md'} open={dialogInvitationOpen} onClose={() => setDialogInvitationOpen(false)}>
+      <Dialog fullWidth maxWidth={'sm'} open={dialogInvitationOpen} onClose={() => setDialogInvitationOpen(false)}>
         <DialogContent>
           < main className={'flex gap-5 flex-col'} >
             <div className="mx-auto my-3">
-              <Invitation {...state} />
-
+              <p>Deseja gerar o convite para {state.guests}, válido para {state.quantity} {state.quantity>1? 'pessoas' : 'pessoa'} na mesa {state.table}?</p>
             </div>
           </main >
         </DialogContent>

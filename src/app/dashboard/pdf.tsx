@@ -1,4 +1,4 @@
-import { Document, Page, View, Text, StyleSheet, PDFViewer, Image, Font } from '@react-pdf/renderer';
+import { Document, Page, View, Text, StyleSheet, PDFViewer, Image, Font, Link, Svg } from '@react-pdf/renderer';
 
 export function PDF({ quantity, table, guests }: { quantity: number, table: string, guests: string }) {
 
@@ -30,13 +30,12 @@ export function PDF({ quantity, table, guests }: { quantity: number, table: stri
         },
         footer: {
             display: 'flex',
-            flexDirection: 'row',
+            flexDirection: 'column',
             height: '15%',
-            alignItems: 'flex-end',
-            gap: '20px',
+            alignItems: 'flex-start',
             fontSize: '10pt',
             padding: '20px',
-            color: 'rgb(100,100,100)'
+            color: 'rgb(0,0,0)'
         },
         section: {
             margin: 0,
@@ -94,15 +93,19 @@ export function PDF({ quantity, table, guests }: { quantity: number, table: stri
                             06 de Dezembro de 2024
                         </Text>
                     </View>
+                    <View style={{ textAlign: 'center', display: 'flex', alignItems: 'center' }}>
+                        <Text style={{ maxWidth: '130px', color: 'black', lineHeight: '1.5' }}>
+                            <Link style={{ color: '#ba9222' }} href='https://maps.app.goo.gl/MFB5eLKMZamMZ7NR7'>
+                                JB Eventos, Av. das Indústrias, Sikwama pelas 15:00 horas
+                            </Link>
+                        </Text>
+                    </View>
                 </View>
                 <View style={styles.footer}>
-                    <Text style={styles.text}>
+                    <Text style={{ ...styles.text, fontSize: '12pt' }}>
                         Convite válido para {quantity} pessoas
                     </Text>
-                    <Text style={styles.text}>
-                        |
-                    </Text>
-                    <Text style={styles.text}>
+                    <Text style={{ ...styles.text, fontSize: '12pt' }}>
                         Mesa {table}
                     </Text>
                 </View>
